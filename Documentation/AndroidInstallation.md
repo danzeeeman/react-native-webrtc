@@ -24,7 +24,7 @@ project(':WebRTCModule').projectDir = new File(rootProject.projectDir, '../node_
 ```gradle
 dependencies {
   ...
-  compile project(':WebRTCModule')
+   implementation project(':WebRTCModule')
 }
 
 ```
@@ -73,24 +73,29 @@ compileOptions {
 
 ```gradle
 dependencies {
-  classpath 'com.android.tools.build:gradle:3.0.1'
+   classpath("com.android.tools.build:gradle:3.5.3")
 }
 
 //...
 
 ext {
   //...
-  compileSdkVersion = 27
-  buildToolsVersion = '27.0.3'
+  compileSdkVersion = 29
+  buildToolsVersion = '29.0.1'
   //...
 }
 ```
 
 5.c.) In `android/gradle/wrapper/gradle-wrapper.properties` set `distributionUrl` variable to
 ```
-distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
 ```
 
+6. Edit `android/gradle.properties` and add the following
+
+```
+android.enableDexingArtifactTransform.desugaring=false
+```
 
 ## CLEAN PROCESS
 
